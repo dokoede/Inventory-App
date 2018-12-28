@@ -1,3 +1,5 @@
+const submitInventory = document.getElementById('inventory-form')
+
 // inventory class
 
 class Inventory {
@@ -69,13 +71,24 @@ class Interface {
             list.removeChild(list.firstChild);
         }
     }
+
+    static printMessage(message, className) {
+        const messageWrapper = document.createElement('div');
+        messageWrapper.classList.add('text-center', 'alert', className);
+        messageWrapper.appendChild(document.createTextNode(message));
+
+        document.querySelector('.primary ').insertBefore(messageWrapper, submitInventory)
+        setTimeout(function () {
+            document.querySelector('.primary .alert').remove();
+        }, 3000)
+    }
 }
 
 // display inventory
 document.addEventListener('DOMContentLoaded', Interface.displayInventory)
 
 // submit an inventory
-const submitInventory = document.getElementById('inventory-form')
+
 submitInventory.addEventListener('submit', (e) => {
     e.preventDefault()
     const name = document.getElementById('name').value
@@ -83,19 +96,16 @@ submitInventory.addEventListener('submit', (e) => {
     const dop = document.getElementById('dop').value
     const condition = document.getElementById('condition').value
     // validate inventory Name
-    if (name === null || name === '' || name === '0') {
+    if (name === '' || type === '') {
+        // alert failed message
+        Interface.printMessage('Please Complete Missing Field', 'alert-danger')
 
-
-
-        alert('Please Insert valid Name')
-        setTimeout(function () {
-            window.location.reload();
-        }, 1000)
     } else {
-
+        // alert success message
+        Interface.printMessage('Added Successfully', 'alert-success')
         // instantiate class
         const inventory = new Inventory(name, type, dop, condition)
-        console.log(inventory)
+
 
         // Add Item to Inventory
         Interface.addToList(inventory)

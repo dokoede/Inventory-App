@@ -12,47 +12,49 @@
 </head>
 
 <body>
-    <h1>Inventory</h1>
-    <form id="inventory-form">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" />
-        </div>
-        <div class="form-group">
-            <label for="Type">Type</label>
-            <input type="text" class="form-control" id="type" />
-        </div>
-        <div class="form-group">
-            <label for="dop">Date Purchased</label>
-            <input type="date" class="form-control" id="dop" />
-        </div>
 
-        <div class="form-group">
-            <label for="condition">Condition</label>
-            <select type="text" class="form-control" id="condition">
-                <option>Working</option>
-                <option>Faulty</option>
-                <option>Damaged</option>
-            </select>
-        </div>
-        <button type="submit " class="btn btn-success">Add to List</button>
-        <!-- <button type="reset " class="btn btn-success" id="clear-list">Clear Inventory</button> -->
+    <div class="container primary mt-0">
+        <h1 class='text-primary'>Customer Inventory</h1>
+        <form id="inventory-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control-sm" id="name" />
+            </div>
+            <div class="form-group">
+                <label for="Type">Type</label>
+                <input type="text" class="form-control-sm" id="type" />
+            </div>
+            <div class="form-group">
+                <label for="dop">Date Purchased</label>
+                <input type="date" class="form-control-sm" id="dop" />
+            </div>
 
-        <div class="form-group">
-            <table class="table mt-5">
-                <thead class="thead-light">
-                    <tr>
-                        <th scoped="col">Name</th>
-                        <th scoped="col">Type</th>
-                        <th scoped="col">Purchased Date</th>
-                        <th scoped="col">Condition</th>
-                    </tr>
-                </thead>
-                <tbody id="inventory-list"></tbody>
-            </table>
-            <a type='reset' class="btn btn-success" id="clear-all">Clear Inventory</a>
-        </div>
-    </form>
+            <div class="form-group">
+                <label for="condition">Condition</label>
+                <select type="text" class="form-control-sm" id="condition">
+                    <option>Working</option>
+                    <option>Faulty</option>
+                    <option>Damaged</option>
+                </select>
+            </div>
+            <button type="submit " class="btn btn-success">Add to List</button>
+
+            <div class="form-group">
+                <table class="table mt-5">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scoped="col">Name</th>
+                            <th scoped="col">Type</th>
+                            <th scoped="col">Purchased Date</th>
+                            <th scoped="col">Condition</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-list"></tbody>
+                </table>
+                <a type='reset' class="btn btn-success" id="clear-all">Clear Inventory</a>
+            </div>
+        </form>
+    </div>
 </body>
 <script src="./app.js"></script>
 
