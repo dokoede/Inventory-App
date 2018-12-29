@@ -17,12 +17,16 @@
         <h1 class='text-primary'>Customer Inventory</h1>
         <form id="inventory-form">
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Customer Name</label>
                 <input type="text" class="form-control-sm" id="name" />
             </div>
             <div class="form-group">
-                <label for="Type">Type</label>
+                <label for="Type">Item Type</label>
                 <input type="text" class="form-control-sm" id="type" />
+            </div>
+            <div class="form-group">
+                <label for="serial">Serial Number</label>
+                <input type="text" class="form-control-sm" id="serial" />
             </div>
             <div class="form-group">
                 <label for="dop">Date Purchased</label>
@@ -45,6 +49,7 @@
                         <tr>
                             <th scoped="col">Name</th>
                             <th scoped="col">Type</th>
+                            <th scoped='col'>Serial Number</th>
                             <th scoped="col">Purchased Date</th>
                             <th scoped="col">Condition</th>
                         </tr>
